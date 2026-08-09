@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nature Guest House — Poste de Flacq, Mauritius</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-dark: #1f3b2c;
+  --green: #2f5d3a;
+  --cream: #faf6ef;
+  --sand: #f0e9d8;
+  --gold: #c8a24a;
+  --pink: #e0327a;
+  --text: #26301f;
+  --text-light: #5a6b52;
+  --white: #ffffff;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(31, 59, 44, 0.12);
+  --font-body: 'Poppins', sans-serif;
+  --font-display: 'Cormorant Garamond', serif;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--green-dark);
+  margin: 0 0 0.5em;
+  line-height: 1.15;
+  font-weight: 700;
+}
+h1 { font-size: 2.6rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.3rem; }
+p { margin: 0 0 1em; color: var(--text-light); }
+a { color: var(--green); text-decoration: none; }
+a:hover { color: var(--green-dark); }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 60px 0; }
+.btn {
+  display: inline-block; padding: 14px 28px; border-radius: 999px; font-weight: 600;
+  font-size: 0.95rem; border: 2px solid transparent; text-align: center; cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-whatsapp { background: #25d366; color: var(--white); }
+.btn-whatsapp:hover { background: #1ea952; color: var(--white); }
+.btn-outline { background: transparent; border-color: var(--green); color: var(--green); }
+.btn-outline:hover { background: var(--green); color: var(--white); }
+.btn-lg { padding: 16px 34px; font-size: 1.05rem; }
+
+.site-header {
+  background: var(--white); box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  position: sticky; top: 0; z-index: 100;
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 20px; flex-wrap: wrap; gap: 10px;
+}
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo img { height: 48px; }
+.header-inner nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.header-inner nav a { color: var(--text); font-weight: 500; font-size: 0.95rem; }
+
+.hero {
+  position: relative;
+  background: linear-gradient(rgba(31,59,44,0.55), rgba(31,59,44,0.55)), url('images/exterior.jpg');
+  background-size: cover; background-position: center;
+  color: var(--white);
+  padding: 120px 0;
+  text-align: center;
+}
+.hero .eyebrow {
+  text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem;
+  color: var(--gold); font-weight: 600; margin-bottom: 14px;
+}
+.hero h1 { color: var(--white); font-size: 3rem; }
+.hero p.sub { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 600px; margin: 0 auto 28px; }
+.hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.hero .btn-outline { border-color: var(--white); color: var(--white); }
+.hero .btn-outline:hover { background: var(--white); color: var(--green-dark); }
+
+.section-title { text-align: center; }
+.section-sub { text-align: center; color: var(--text-light); margin-bottom: 40px; }
+
+.highlight-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.highlight-card {
+  background: var(--white); border-radius: var(--radius); padding: 28px 20px;
+  text-align: center; box-shadow: var(--shadow);
+}
+.highlight-icon { color: var(--green); margin-bottom: 12px; display: flex; justify-content: center; }
+.highlight-icon svg { width: 34px; height: 34px; }
+.highlight-card h3 { font-size: 1.05rem; }
+.highlight-card p { font-size: 0.88rem; margin: 0; }
+
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+}
+.gallery-grid img {
+  width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius);
+  box-shadow: var(--shadow); cursor: pointer; display: block;
+  transition: transform 0.2s ease;
+}
+.gallery-grid img:hover { transform: scale(1.03); }
+
+.about-band { background: var(--sand); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.about-grid img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); }
+
+.contact-band { background: var(--green-dark); color: var(--white); text-align: center; }
+.contact-band h2 { color: var(--white); }
+.contact-band p { color: rgba(255,255,255,0.85); }
+.contact-details {
+  display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 30px 0;
+}
+.contact-item { text-align: center; }
+.contact-item .label { color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 6px; }
+.contact-item a, .contact-item span.value { color: var(--white); font-size: 1.05rem; font-weight: 500; }
+
+.site-footer { background: #14261c; color: rgba(255,255,255,0.7); text-align: center; padding: 24px 20px; font-size: 0.85rem; }
+.site-footer .sample-note { color: var(--gold); margin-top: 6px; }
+
+/* Lightbox */
+.lightbox {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+  z-index: 999; align-items: center; justify-content: center; padding: 20px;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90%; max-height: 85%; border-radius: 10px; }
+.lightbox-close {
+  position: absolute; top: 24px; right: 32px; color: var(--white);
+  font-size: 2rem; cursor: pointer; line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .highlight-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; }
+  .contact-details { gap: 24px; }
+}
+@media (max-width: 640px) {
+  h1 { font-size: 2rem; }
+  .hero { padding: 80px 0; }
+  .hero h1 { font-size: 2rem; }
+  .header-inner nav { display: none; }
+  .highlight-grid, .gallery-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <img src="images/logo.png" alt="The Nature Guest House logo">
+    </div>
+    <nav>
+      <a href="#rooms">Rooms</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">Amenities</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/23059590400" target="_blank" rel="noopener" class="btn btn-whatsapp">Book on WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Poste de Flacq · Mauritius</p>
+    <h1>The Nature Guest House</h1>
+    <p class="sub">A private, comfortable stay on the east coast of Mauritius. Open 24/7 — book your room directly on WhatsApp.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/23059590400" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">Book via WhatsApp</a>
+      <a href="#gallery" class="btn btn-outline btn-lg">View Photos</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <h2 class="section-title">Why Stay Here</h2>
+    <p class="section-sub">Everything you need for a comfortable, private stay.</p>
+    <div class="highlight-grid">
+      <div class="highlight-card">
+        <div class="highlight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <h3>Open 24/7</h3>
+        <p>Check in any hour of the day, any day of the week.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9.5 12l1.8 1.8L14.5 10"/></svg></div>
+        <h3>Total Privacy</h3>
+        <p>Enclosed parking monitored by Brinks security.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M4.5 6.5l15 11M19.5 6.5l-15 11"/><path d="M12 3l-1.5 1.5M12 3l1.5 1.5M12 21l-1.5-1.5M12 21l1.5-1.5"/></svg></div>
+        <h3>A/C Comfort</h3>
+        <p>King-sized bed and ensuite bathroom in every room.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="13" rx="1.5"/><path d="M8 21h8M12 18v3"/></svg></div>
+        <h3>Canal+ TV</h3>
+        <p>Full Canal+ channel package and a digital safe in each room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section about-band" id="rooms">
+  <div class="container about-grid">
+    <div>
+      <h2>Luxury Rooms</h2>
+      <p>Every room at The Nature Guest House is a spacious, air-conditioned Luxury Room with a king-sized bed, ensuite bathroom, digital safe, and TV with the full Canal+ channel package. Rooms are individually decorated, and some include a private balcony overlooking the surrounding countryside.</p>
+      <p>A valid National ID card is required from all guests at check-in.</p>
+      <a href="https://wa.me/23059590400" target="_blank" rel="noopener" class="btn btn-whatsapp">Check Availability on WhatsApp</a>
+    </div>
+    <img src="images/room-9.jpg" alt="Luxury room at The Nature Guest House">
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="container">
+    <h2 class="section-title">Gallery</h2>
+    <p class="section-sub">A look at our rooms, bathrooms, and grounds. Tap a photo to zoom in.</p>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<section class="section contact-band" id="contact">
+  <div class="container">
+    <h2>Book Your Stay</h2>
+    <p>Reach out any time — we're open 24/7. Reservations are confirmed directly by phone or WhatsApp.</p>
+    <div class="contact-details">
+      <div class="contact-item">
+        <span class="label">WhatsApp / Phone</span>
+        <a href="https://wa.me/23059590400" target="_blank" rel="noopener">+230 5959 0400</a>
+      </div>
+      <div class="contact-item">
+        <span class="label">Facebook</span>
+        <a href="https://www.facebook.com/p/The-Nature-Guest-House-100045218836051/" target="_blank" rel="noopener">The Nature Guest House</a>
+      </div>
+      <div class="contact-item">
+        <span class="label">Address</span>
+        <span class="value">Allée Mangue Street, Poste de Flacq, Mauritius</span>
+      </div>
+    </div>
+    <a href="https://wa.me/23059590400" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">Chat on WhatsApp</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; 2026 The Nature Guest House · Nature Holidays Ltd · Licensed by the Mauritius Tourism Authority</p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged photo">
+</div>
+
+<script>
+const roomCount = 21;
+const grid = document.getElementById('galleryGrid');
+const extras = ['balcony-view.jpg','lounge.jpg','hallway.jpg','bathroom-1.jpg','bathroom-2.jpg','bathroom-3.jpg'];
+let images = [];
+for (let i = 1; i <= roomCount; i++) images.push('room-' + i + '.jpg');
+images = images.concat(extras);
+
+images.forEach(src => {
+  const img = document.createElement('img');
+  img.src = 'images/' + src;
+  img.alt = 'The Nature Guest House photo';
+  img.loading = 'lazy';
+  img.addEventListener('click', () => {
+    document.getElementById('lightboxImg').src = 'images/' + src;
+    document.getElementById('lightbox').classList.add('open');
+  });
+  grid.appendChild(img);
+});
+
+document.getElementById('lightboxClose').addEventListener('click', () => {
+  document.getElementById('lightbox').classList.remove('open');
+});
+document.getElementById('lightbox').addEventListener('click', (e) => {
+  if (e.target.id === 'lightbox') e.currentTarget.classList.remove('open');
+});
+</script>
+
+</body>
+</html>
